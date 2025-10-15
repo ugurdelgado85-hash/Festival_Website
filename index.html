@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AndenFestival 2025</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500&display=swap');
+
+    /* === Grundlayout === */
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      color: #3b2b20;
+      text-align: center;
+      background: linear-gradient(#a74424, #d96936);
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* === Hintergrundmuster oben === */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 130px;
+      left: 0;
+      width: 100%;
+      height: 160px;
+      background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='160' viewBox='0 0 800 160'><rect width='800' height='160' fill='%23a74424'/><polygon points='0,160 80,100 160,140 240,80 320,120 400,60 480,100 560,70 640,110 720,90 800,160' fill='%23d96936'/><polygon points='0,160 100,110 200,130 300,90 400,110 500,80 600,120 700,100 800,160' fill='%23e28948'/></svg>");
+      background-repeat: repeat-x;
+      background-size: contain;
+      z-index: -1;
+    }
+
+    body::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 220px;
+      background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='220' viewBox='0 0 800 220'><rect width='800' height='220' fill='%232e3c18'/><polygon points='0,140 100,100 200,130 300,90 400,120 500,80 600,110 700,90 800,140 800,220 0,220' fill='%233e4e23'/><polygon points='0,180 80,130 160,150 240,110 320,140 400,100 480,130 560,110 640,140 720,120 800,160 800,220 0,220' fill='%23556b2f'/></svg>");
+      background-repeat: repeat-x;
+      background-size: contain;
+      z-index: -1;
+    }
+
+    html::before {
+      content: "";
+      position: absolute;
+      bottom: 220px; /* Höhe der Bergkette anpassen */
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='60' viewBox='0 0 800 60'><rect width='800' height='60' fill='%23d96936'/><polygon points='0,60 40,0 80,60 120,0 160,60 200,0 240,60 280,0 320,60 360,0 400,60 440,0 480,60 520,0 560,60 600,0 640,60 680,0 720,60 760,0 800,60' fill='%234a5c24'/><polygon points='0,0 20,30 40,0 60,30 80,0 100,30 120,0 140,30 160,0 180,30 200,0 220,30 240,0 260,30 280,0 300,30 320,0 340,30 360,0 380,30 400,0 420,30 440,0 460,30 480,0 500,30 520,0 540,30 560,0 580,30 600,0 620,30 640,0 660,30 680,0 700,30 720,0 740,30 760,0 780,30 800,0' fill='%235c7430'/></svg>");
+      background-repeat: repeat-x;
+      background-size: contain;
+      z-index: -1;
+    }
+
+
+    /* === Header === */
+    header {
+      padding: 120px 20px 60px;
+      color: #ffd27f;
+      position: relative;
+      z-index: 10;
+    }
+
+    header img.main-logo {
+      width: 160px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.8em;
+      margin: 20px 0 10px;
+      letter-spacing: 1px;
+      color: #ffcc7a;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 1.1em;
+      color: #ffe7c2;
+    }
+
+    /* === Hauptinhalt === */
+    main {
+      background: #fdf3e7;
+      color: #3b2b20;
+      max-width: 900px;
+      margin: 40px auto 120px;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      position: relative;
+      z-index: 5;
+    }
+
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      color: #8b2f19;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 1.8em;
+      margin-bottom: 15px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 14px;
+      border-bottom: 1px solid #eee;
+    }
+
+    th {
+      background: #e07a3c;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 0.95em;
+      letter-spacing: 0.5px;
+    }
+
+    tr:nth-child(even) {
+      background: #f9f2eb;
+    }
+
+    .bottom-logo {
+      margin-top: 35px;
+      width: 130px;
+      height: auto;
+      opacity: 0.9;
+      transition: opacity 0.3s ease;
+    }
+
+    .bottom-logo:hover {
+      opacity: 1;
+    }
+
+    footer {
+      background: #3b2b20;
+      color: #fdf3e7;
+      padding: 15px;
+      font-size: 0.9em;
+      border-top: 3px solid #e07a3c;
+      position: relative;
+      z-index: 5;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="Bilder/AndenFestival_logo.png" alt="Festival Logo" class="main-logo" />
+    <h1>AndenFestival 2025</h1>
+    <p>Musik, Kultur & Gemeinschaft – 18. Oktober 2025</p>
+  </header>
+
+  <main>
+    <h2>Eventplan</h2>
+  <table>
+    <tr><th>Zeit</th><th>Event</th></tr>
+    <tr><td>Ganztägig</td><td>Kunsthandwerk, traditionelle Kleidung, Musik & Workshops</td></tr>
+    <tr><td>Ganztägig</td><td>Köstlichkeiten aus den Anden – organisiert von Casita Perú (Julissa Delgado)</td></tr>
+    <tr><td>11:00 – 11:30</td><td>Offizielle Eröffnung mit Begrüßung</td></tr>
+    <tr><td>11:30 – 13:00</td><td>Kinderprogramm (Spiele, Basteln, Aktionen)</td></tr>
+    <tr><td>12:00 – 22:00</td><td>Kulinarische Spezialitäten aus den Anden</td></tr>
+    <tr><td>12:00 – 22:00</td><td>Kunststände & Handwerksmarkt</td></tr>
+    <tr><td>13:00 – 15:00</td><td>Workshops: Anden-Musik & Tanz</td></tr>
+    <tr><td>15:30 – 18:00</td><td>Traditionelle Tänze & Folklore</td></tr>
+    <tr><td>18:00 – 20:00</td><td>Konzert „Aru“ & Tanzgruppe „Leal“</td></tr>
+    <tr><td>20:00</td><td>Tombola & Preisvergabe</td></tr>
+    <tr><td>20:30</td><td>Musik mit Jorge Arjona (Argentinien)</td></tr>
+    <tr><td>21:00</td><td>Überraschungs-Band</td></tr>
+    <tr><td>21:30 – 02:00</td><td>Tanznacht unter den Sternen</td></tr>
+  </table>
+
+    <img src="Bilder\Castia Peru Logo.png" alt="Kleines Logo" class="bottom-logo" />
+  </main>
+
+  <footer>
+    © 2025 Andenfestival – Alle Rechte vorbehalten
+  </footer>
+</body>
+</html>
