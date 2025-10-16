@@ -168,28 +168,62 @@
 
   <main>
     <h2>Eventplan</h2>
-  <table>
-    <tr><th>Zeit</th><th>Event</th></tr>
-    <tr><td>Ganztägig</td><td>Kunsthandwerk, traditionelle Kleidung, Musik & Workshops</td></tr>
-    <tr><td>Ganztägig</td><td>Köstlichkeiten aus den Anden – organisiert von Casita Perú (Julissa Delgado)</td></tr>
-    <tr><td>11:00 – 11:30</td><td>Offizielle Eröffnung mit Begrüßung</td></tr>
-    <tr><td>11:30 – 13:00</td><td>Kinderprogramm (Spiele, Basteln, Aktionen)</td></tr>
-    <tr><td>12:00 – 22:00</td><td>Kulinarische Spezialitäten aus den Anden</td></tr>
-    <tr><td>12:00 – 22:00</td><td>Kunststände & Handwerksmarkt</td></tr>
-    <tr><td>13:00 – 15:00</td><td>Workshops: Anden-Musik & Tanz</td></tr>
-    <tr><td>15:30 – 18:00</td><td>Traditionelle Tänze & Folklore</td></tr>
-    <tr><td>18:00 – 20:00</td><td>Konzert „Aru“ & Tanzgruppe „Leal“</td></tr>
-    <tr><td>20:00</td><td>Tombola & Preisvergabe</td></tr>
-    <tr><td>20:30</td><td>Musik mit Jorge Arjona (Argentinien)</td></tr>
-    <tr><td>21:00</td><td>Überraschungs-Band</td></tr>
-    <tr><td>21:30 – 02:00</td><td>Tanznacht unter den Sternen</td></tr>
-  </table>
-
+    <table>
+      <tr><th>Zeit</th><th>Event</th></tr>
+      <tr><td>Ganztägig</td><td>Kunsthandwerk, traditionelle Kleidung, Musik & Workshops</td></tr>
+      <tr><td>Ganztägig</td><td>Köstlichkeiten aus den Anden – organisiert von Casita Perú (Julissa Delgado)</td></tr>
+      <tr><td>11:00 – 11:30</td><td>Offizielle Eröffnung mit Begrüßung</td></tr>
+      <tr><td>11:30 – 13:00</td><td>Kinderprogramm (Spiele, Basteln, Aktionen)</td></tr>
+      <tr><td>12:00 – 22:00</td><td>Kulinarische Spezialitäten aus den Anden</td></tr>
+      <tr><td>12:00 – 22:00</td><td>Kunststände & Handwerksmarkt</td></tr>
+      <tr><td>13:00 – 15:00</td><td>Workshops: Anden-Musik & Tanz</td></tr>
+      <tr><td>15:30 – 18:00</td><td>Traditionelle Tänze & Folklore</td></tr>
+      <tr><td>18:00 – 20:00</td><td>Konzert „Aru“ & Tanzgruppe „Leal“</td></tr>
+      <tr><td>20:00</td><td>Tombola & Preisvergabe</td></tr>
+      <tr><td>20:30</td><td>Musik mit Jorge Arjona (Argentinien)</td></tr>
+      <tr><td>21:00</td><td>Überraschungs-Band</td></tr>
+      <tr><td>21:30 – 02:00</td><td>Tanznacht unter den Sternen</td></tr>
+    </table>
+    <h2>Parkplätze</h2>
+    <div id="map"></div>
     <img src="Bilder\Castia_Peru_Logo.png" alt="Kleines Logo" class="bottom-logo" />
   </main>
 
   <footer>
     © 2025 Andenfestival – Alle Rechte vorbehalten
   </footer>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script>
+    // Karte initialisieren
+    var map = L.map('map').setView([49.734095, 9.671863], 17); // ⬅️ Hier Koordinaten ändern!
+    
+    setTimeout(function() {
+    map.invalidateSize();
+    }, 500);
+
+    // OpenStreetMap-Layer laden
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Marker setzen (optional)
+    L.marker([49.734095, 9.671863])
+      .addTo(map)
+      .bindPopup("Hier findet das AndenFestival statt!")
+      .openPopup();
+  </script>
+
+  <style>
+    #map {
+      height: 400px;
+      width: 100%;
+      margin-top: 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    }
+  </style>
 </body>
 </html>
